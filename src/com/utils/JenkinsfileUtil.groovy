@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 package com.utils
 
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.utils.JenkinsProperty
 
 @Grab('com.fasterxml.jackson.core:jackson-databind:2.12.5')
