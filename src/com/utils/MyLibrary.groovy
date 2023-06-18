@@ -15,7 +15,7 @@ class MyLibrary {
     }
 
     String readAsResource() {
-        def myResource = SandboxInvoker.libraryResource(pathFile)
+        def myResource = libraryResource(pathFile)
         return myResource
     }
 
