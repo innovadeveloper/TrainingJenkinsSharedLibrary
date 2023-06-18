@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 package com.utils
 
-import sharedlibrary.models.JenkinsProperty
+import com.utils.JenkinsProperty
 
 @Grab('com.fasterxml.jackson.core:jackson-databind:2.12.5')
 @Grab('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.5')
