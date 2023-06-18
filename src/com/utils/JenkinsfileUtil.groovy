@@ -44,7 +44,8 @@ class JenkinsfileUtil {
         def dataText = this.generateKubernetesResources(jenkinsProperty, true)
         def fileTextCreated = ""
         dataText.collect(){
-            def rootPath = "output/"
+            sh 'pwd'
+            def rootPath = "./output/"
             def file = new File(rootPath + it.key)
             file.write(it.value)
             fileTextCreated = file.text
