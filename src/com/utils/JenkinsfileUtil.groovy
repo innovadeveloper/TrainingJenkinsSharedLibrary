@@ -9,13 +9,15 @@ import com.utils.JenkinsProperty
 @Grab('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.5')
 
 class JenkinsfileUtil {
-
+    def readClosure
     // Ejemplo de acceso a variables definidas en el script del pipeline
     static def getProjectName() {
         return "azar"
     }
 
-    static String main(String yamlContent) {
+    static String main(String readClosure) {
+        JenkinsfileUtil.readClosure = readClosure
+        def yamlContent = JenkinsfileUtil.readClosure("templates/vars/template.dev.yaml") // Reemplaza con la ruta de tu archivo YAML
 //        def yamlContent =content // Reemplaza con la ruta de tu archivo YAML
         def objectMapper = new ObjectMapper(new YAMLFactory())
         JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
