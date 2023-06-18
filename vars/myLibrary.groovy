@@ -3,21 +3,20 @@
 import java.io.InputStream
 import com.cloudbees.groovy.cps.sandbox.SandboxInvoker
 
-def pathFile = 'test.txt'
 String simpleMessage() {
     return 'hola'
 }
 String readAsInputStream() {
-    def myResource = this.class.getResourceAsStream(pathFile)
+    def myResource = this.class.getResourceAsStream('test.txt')
     return myResource
 }
 String readAsInputStreamTwo() {
-    def myResource = this.getClass().getClassLoader().getResourceAsStream(pathFile)
+    def myResource = this.getClass().getClassLoader().getResourceAsStream('test.txt')
     return myResource
 }
 
 String readAsResource() {
     echo 'readAsResource'
-    def myResource = libraryResource(pathFile)
+    def myResource = libraryResource('test.txt')
     return myResource
 }
