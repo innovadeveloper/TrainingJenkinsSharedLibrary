@@ -17,7 +17,7 @@ class JenkinsfileUtil {
 
     static String main(String readClosure) {
 //        JenkinsfileUtil.readClosure = readClosure
-        def yamlContent = readClosure("templates/vars/template.dev.yaml") // Reemplaza con la ruta de tu archivo YAML
+        def yamlContent = readClosure('templates/vars/template.dev.yaml') // Reemplaza con la ruta de tu archivo YAML
 //        def yamlContent =content // Reemplaza con la ruta de tu archivo YAML
         def objectMapper = new ObjectMapper(new YAMLFactory())
         JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
@@ -32,5 +32,13 @@ class JenkinsfileUtil {
 
     static String readByClosure(def closure){
         return closure('test.txt')
+    }
+
+
+    static String readByClosure2(def closure){
+        def yamlContent = readClosure('templates/vars/template.dev.yaml') // Reemplaza con la ruta de tu archivo YAML
+        def objectMapper = new ObjectMapper(new YAMLFactory())
+        JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
+        return jenkinsProperty.project.project_info.app_name
     }
 }
