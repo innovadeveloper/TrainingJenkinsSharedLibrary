@@ -1,0 +1,2 @@
+Este es un archivo de recurso personalizado utilizado por la librería compartida.
+Puedes agregar cualquier contenido o configuración que necesites aquí.
