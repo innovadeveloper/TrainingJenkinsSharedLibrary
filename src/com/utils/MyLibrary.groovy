@@ -1,16 +1,15 @@
 import groovy.json.JsonSlurper
 
 class MyLibrary {
-    static def readResource(String resourceName) {
-        ClassLoader classLoader = ClassLoader.systemClassLoader
-        InputStream inputStream = classLoader.getResourceAsStream(resourceName)
-        def content = null
+    def readResource(String resourceName) {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourceName)
         if (inputStream) {
-            content = inputStream.text
+            def content = inputStream.text
             println "Contenido del recurso ${resourceName}: ${content}"
+            return content
         } else {
             println "No se pudo encontrar el recurso ${resourceName}"
+            return null
         }
-        return content
     }
 }
