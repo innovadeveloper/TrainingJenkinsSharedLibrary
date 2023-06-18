@@ -42,13 +42,15 @@ class JenkinsfileUtil {
         def objectMapper = new ObjectMapper(new YAMLFactory())
         JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
         def dataText = this.generateKubernetesResources(jenkinsProperty, true)
+        def fileTextCreated = ""
         dataText.collect(){
             def rootPath = "output/"
             def file = new File(rootPath + it.key)
             file.write(it.value)
+            fileTextCreated = file.text
         }
 //
-        return dataText
+        return fileTextCreated
     }
 
 
