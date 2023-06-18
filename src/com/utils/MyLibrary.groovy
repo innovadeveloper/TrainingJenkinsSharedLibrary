@@ -1,14 +1,21 @@
 //import groovy.json.JsonSlurper
 //import com.cloudbees.groovy.cps.sandbox.SandboxInvoker
+import java.io.InputStream
+import com.cloudbees.groovy.cps.sandbox.SandboxInvoker
 
 class MyLibrary {
-    String readResourceFile() {
-//        def resourceStream = getClass().getResourceAsStream("/my-resource-file.txt")
-//        def resourceContent = libraryResource('my-resource-file.txt')
-//        def resourceContent = SandboxInvoker.libraryResource('my-resource-file.txt')
-        def resourceStream = getClass().getResourceAsStream('/my-resource-file.txt')
-
-//        def resourceContent = resourceStream?.text
-        return resourceStream
+    String readAsInputStream() {
+        def myResource = this.class.getResourceAsStream('/my-resource-file.txt')
+        return myResource
     }
+    String readAsInputStreamTwo() {
+        def myResource = this.getClass().getClassLoader().getResourceAsStream('my-resource-file.txt')
+        return myResource
+    }
+
+    String readAsResource() {
+        def myResource = SandboxInvoker.libraryResource('my-resource-file.txt')
+        return myResource
+    }
+
 }
