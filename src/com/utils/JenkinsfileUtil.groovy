@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 package com.utils
 
+
 class JenkinsfileUtil {
 //    def steps
 //    def script
@@ -13,11 +14,6 @@ class JenkinsfileUtil {
     // Ejemplo de acceso a variables definidas en el script del pipeline
     static def getProjectName() {
         return "azar"
-    }
-
-    static def getDataFromFile() {
-        def pvTemplate = main.groovy.sharedlibrary.utils.WebJenkinFileUtils.getContentFromPath("templates/kubernetes/template.pv.yaml")
-        return pvTemplate
     }
 
 }
