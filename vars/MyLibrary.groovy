@@ -14,6 +14,7 @@ String readAsInputStreamTwo() {
 }
 
 String readAsResource() {
-    def myResource = libraryResource(pathFile)
+    echo 'readAsResource'
+    def myResource = SandboxInvoker.libraryResource(pathFile)
     return myResource
 }
