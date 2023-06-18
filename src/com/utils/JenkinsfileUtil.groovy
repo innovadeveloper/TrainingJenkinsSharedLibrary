@@ -14,4 +14,10 @@ class JenkinsfileUtil {
     static def getProjectName() {
         return "azar"
     }
+
+    static def getDataFromFile() {
+        def pvTemplate = sharedlibrary.utils.WebJenkinFileUtils.getContentFromPath("templates/kubernetes/template.pv.yaml")
+        return pvTemplate
+    }
+
 }
