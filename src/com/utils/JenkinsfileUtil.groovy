@@ -16,7 +16,6 @@ class JenkinsfileUtil {
     }
 
     static String main(String yamlContent) {
-        JenkinsProperty
 //        def yamlContent =content // Reemplaza con la ruta de tu archivo YAML
         def objectMapper = new ObjectMapper(new YAMLFactory())
         JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
