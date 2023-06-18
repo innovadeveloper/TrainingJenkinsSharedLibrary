@@ -18,6 +18,6 @@ String readAsInputStreamTwo() {
 
 String readAsResource() {
     echo 'readAsResource'
-    def myResource = SandboxInvoker.libraryResource(pathFile)
+    def myResource = libraryResource(pathFile)
     return myResource
 }
