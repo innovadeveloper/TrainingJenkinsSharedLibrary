@@ -1,8 +1,8 @@
-storage:  # no mandatorio
-  volume_size: 3Gi
-  mount_path:
-    - "/opt/media/assets/"
-    - "/opt/media/temp_files/"
+#storage:  # no mandatorio
+#  volume_size: 3Gi
+#  mount_path:
+#    - "/opt/media/assets/"
+#    - "/opt/media/temp_files/"
 service:
   ports:
     - protocol: TCP
