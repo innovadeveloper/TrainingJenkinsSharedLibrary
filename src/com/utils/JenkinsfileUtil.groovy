@@ -4,6 +4,7 @@ package com.utils
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.utils.JenkinsProperty
+import sharedlibrary.models.JenkinsProperty
 
 @Grab('com.fasterxml.jackson.core:jackson-databind:2.12.5')
 @Grab('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.5')
@@ -16,6 +17,7 @@ class JenkinsfileUtil {
     }
 
     static String main(String yamlContent) {
+        JenkinsProperty
 //        def yamlContent =content // Reemplaza con la ruta de tu archivo YAML
         def objectMapper = new ObjectMapper(new YAMLFactory())
         JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
@@ -26,5 +28,9 @@ class JenkinsfileUtil {
 //            file.write(it.value)
 //        }
         return jenkinsProperty.project.project_info.app_name
+    }
+
+    static String readByClosure(def closure){
+        return closure('test.txt')
     }
 }
