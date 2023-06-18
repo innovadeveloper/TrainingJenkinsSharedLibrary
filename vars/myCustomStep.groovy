@@ -1,6 +1,8 @@
 package sharedlibrary
 @Grab('com.fasterxml.jackson.core:jackson-databind:2.12.5')
+@Grab('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.5')
 import com.fasterxml.jackson.databind.ObjectMapper
+
 
 String myFunction() {
     // Crear un objeto ObjectMapper
