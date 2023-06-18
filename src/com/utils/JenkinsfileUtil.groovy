@@ -16,8 +16,8 @@ class JenkinsfileUtil {
     }
 
     static String main(String readClosure) {
-        JenkinsfileUtil.readClosure = readClosure
-        def yamlContent = JenkinsfileUtil.readClosure("templates/vars/template.dev.yaml") // Reemplaza con la ruta de tu archivo YAML
+//        JenkinsfileUtil.readClosure = readClosure
+        def yamlContent = readClosure("templates/vars/template.dev.yaml") // Reemplaza con la ruta de tu archivo YAML
 //        def yamlContent =content // Reemplaza con la ruta de tu archivo YAML
         def objectMapper = new ObjectMapper(new YAMLFactory())
         JenkinsProperty jenkinsProperty = objectMapper.readValue(yamlContent, JenkinsProperty)
