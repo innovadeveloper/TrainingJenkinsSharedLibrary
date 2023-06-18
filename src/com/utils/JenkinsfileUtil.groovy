@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 package com.utils
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.utils.JenkinsProperty
 
