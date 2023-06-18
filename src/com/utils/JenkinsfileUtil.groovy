@@ -44,9 +44,27 @@ class JenkinsfileUtil {
         def dataText = this.generateKubernetesResources(jenkinsProperty, true)
         def fileTextCreated = ""
         dataText.collect(){
-            def rootPath = "./output/"
-            def file = new File(rootPath + it.key)
-            file.write(it.value)
+//            def rootPath = "./output/"
+//            def file = new File(rootPath + it.key)
+//            file.write(it.value)
+//            fileTextCreated = file.text
+
+
+            def filePath = 'output/' + it.key
+            def fileContent = it.value
+            def file = new File(filePath)
+            if (file.exists()) {
+                file.withWriter { writer ->
+                    writer.write(fileContent)
+                }
+                println("El archivo ha sido sobrescrito")
+            } else {
+                file.parentFile.mkdirs()
+                file.withWriter { writer ->
+                    writer.write(fileContent)
+                }
+                println("El archivo ha sido creado")
+            }
             fileTextCreated = file.text
         }
 //
