@@ -1,6 +1,5 @@
 package com.utils
 
-import com.fasterxml.jackson.annotation.JsonProperty
 
 class ConfigurationTool {
     String build
