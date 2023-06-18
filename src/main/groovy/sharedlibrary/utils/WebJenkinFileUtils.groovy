@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import org.apache.commons.lang.StringUtils
 
-import sharedlibrary.models.JenkinsProperty
-
+//import sharedlibrary.models.JenkinsProperty
+import main.groovy.sharedlibrary.models.JenkinsProperty
 
 class WebJenkinFileUtils {
 
