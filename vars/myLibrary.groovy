@@ -15,8 +15,7 @@ String readAsInputStreamTwo() {
     return myResource
 }
 
-String readAsResource() {
-    echo 'readAsResource'
-    def myResource = libraryResource('test.txt')
+String readAsResource(filePath) {
+    def myResource = libraryResource(filePath)
     return myResource
 }
