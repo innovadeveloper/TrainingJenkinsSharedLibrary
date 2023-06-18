@@ -2,6 +2,7 @@
 //import com.cloudbees.groovy.cps.sandbox.SandboxInvoker
 import java.io.InputStream
 import com.cloudbees.groovy.cps.sandbox.SandboxInvoker
+import com.utils.JenkinsfileUtil
 
 String simpleMessage() {
     return 'hola'
@@ -18,4 +19,21 @@ String readAsInputStreamTwo() {
 String readAsResource(filePath) {
     def myResource = libraryResource(filePath)
     return myResource
+}
+
+def executeReadAndCreateFile(){
+    def myClosure = { param ->
+        // Lógica del closure utilizando el parámetro
+        return readAsResource(param)
+    }
+    echo "read 6"
+    def jenkinsfileUtil = new JenkinsfileUtil()
+    def messageFromResource = jenkinsfileUtil.readByClosure2(myClosure)
+    messageFromResource.collect(){
+        // /var/lib/jenkins/jobs/TrainingSharedLibrary/workspace
+        writeFile file: "./${it.key}-2", text: it.value
+        echo 'escrito file 2'
+        sh "pwd"
+        sh "ls -l"
+    }
 }
