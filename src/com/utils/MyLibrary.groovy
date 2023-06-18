@@ -4,7 +4,7 @@ import java.io.InputStream
 import com.cloudbees.groovy.cps.sandbox.SandboxInvoker
 
 class MyLibrary {
-    def pathFile = './test.txt'
+    def pathFile = 'test.txt'
     String readAsInputStream() {
         def myResource = this.class.getResourceAsStream(pathFile)
         return myResource
