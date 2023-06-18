@@ -4,7 +4,6 @@ package com.utils
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.utils.JenkinsProperty
-import sharedlibrary.models.JenkinsProperty
 
 @Grab('com.fasterxml.jackson.core:jackson-databind:2.12.5')
 @Grab('com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.12.5')
