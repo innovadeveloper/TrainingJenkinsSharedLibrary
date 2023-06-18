@@ -35,7 +35,7 @@ class JenkinsfileUtil {
     }
 
 
-    static String readByClosure2(def closure){
+    String readByClosure2(def closure){
         this.readClosure = closure
         def yamlContent = this.readClosure('templates/vars/template.dev.yaml') // Reemplaza con la ruta de tu archivo YAML
         def objectMapper = new ObjectMapper(new YAMLFactory())
