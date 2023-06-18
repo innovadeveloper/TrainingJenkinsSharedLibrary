@@ -1,7 +1,7 @@
 import groovy.json.JsonSlurper
 
 class MyLibrary {
-    def readResource(String resourceName) {
+    static def readResource(String resourceName) {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourceName)
         if (inputStream) {
             def content = inputStream.text
